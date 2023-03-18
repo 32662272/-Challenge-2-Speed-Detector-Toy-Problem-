@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <style>
+#l1> input {
+        width: 240px;
+        border-color: blue;
+        padding: 12px;
+        margin: 8px;
+        border-radius: 4px;
+        display: grid;
+        place-items: center;
+        margin-top: 240px;
+        margin-left: 550px;
+}
+.l2{
+    margin-left: 650px;
+}
+#result{
+        margin-left: 600px;
+        font-size: 30px;
+        color: red;
+        padding-top: 5px;
+}
+    </style>
+</head>
+<body>
+    <div id="l1"><input type="number" placeholder="speed" id="speed"/></div>
+    <button class="l2"  onclick="TICKET()">TICKET</button>
+    <div id="result"></div>
+    <SCRIPt>
+        function TICKET(){
+            const speed =document.getElementById("speed").value
+            var ticket
+
+            if (speed <=70){
+                console.log("OK")
+                document.getElementById("result").innerText= "OK"
+                }
+                else{
+                    var diff = speed-70
+                    ticket = Math.floor( diff/5)
+                    console.log(Math.floor(ticket))
+                    if(ticket<12){
+                        document.getElementById("result").innerText= ticket
+                    }
+                    if(ticket>12){
+                        console.log("ticket suspended")
+                        document.getElementById("result").innerText= "Ticket Suspended"
+                    }
+                }
+        }
+    </SCRIPt>
+
+    
+</body>
+</html>
